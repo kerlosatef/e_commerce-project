@@ -55,6 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
+<head>
+    <!-- العناصر الحالية -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
 <body>
 
     <nav class="navbar">
@@ -84,6 +89,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <a href="login.php" class="navbar-link nav-link" data-page="login">Login</a>
                 <a href="register.php" class="button button-primary nav-link" data-page="register"
                     style="margin-right: var(--space-4);">Register</a>
+                <div class="navbar-menu-desktop">
+                    <!-- الروابط الحالية -->
+                    <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle dark mode">
+                        <i id="theme-icon" class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
             <div class="navbar-mobile-button-wrapper">
                 <button id="mobile-menu-button" class="navbar-mobile-button" aria-controls="mobile-menu"
@@ -99,8 +110,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
+
             </div>
+
         </div>
+
+
         <div id="mobile-menu" class="navbar-menu-mobile">
             <a href="index.php" class="navbar-link nav-link" data-page="index">Home</a>
             <a href="about.php" class="navbar-link nav-link" data-page="about">About Us</a>
@@ -117,7 +132,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="auth-container">
             <div class="auth-card">
                 <h2 class="auth-title">Create a New Account</h2>
-                <?php if (isset($error_message)) { echo "<div class='error-message'>$error_message</div>"; } ?>
+                <?php if (isset($error_message)) {
+                    echo "<div class='error-message'>$error_message</div>";
+                } ?>
                 <form class="auth-form" action="" method="POST">
                     <div class="register-input-group">
                         <div>
@@ -163,7 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 

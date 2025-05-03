@@ -17,6 +17,12 @@ if (!isset($_SESSION['user_id'])) {
     <title>My E-commerce Store - About Us</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<head>
+    <!-- العناصر الحالية -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -43,15 +49,24 @@ if (!isset($_SESSION['user_id'])) {
                             data-page="product2">Product 2</a>
                         <a href="product3.php" class="products-dropdown-link nav-link" role="menuitem"
                             data-page="product3">Product 3</a>
+
                     </div>
+
                 </div>
 
                 <?php if (isset($_SESSION['user_id'])): ?>
-               <a href="logout.php" class="navbar-link nav-link logout">Logout</a>
-             <?php else: ?>
-             <a href="login.php" class="navbar-link nav-link" data-page="login">Login</a>
-         <a href="register.php" class="button button-primary nav-link" data-page="register" style="margin-right: var(--space-4);">Register</a>
-         <?php endif; ?>
+                    <a href="logout.php" class="navbar-link nav-link logout">Logout</a>
+                <?php else: ?>
+                    <a href="login.php" class="navbar-link nav-link" data-page="login">Login</a>
+                    <a href="register.php" class="button button-primary nav-link" data-page="register"
+                        style="margin-right: var(--space-4);">Register</a>
+                <?php endif; ?>
+                <div class="navbar-menu-desktop">
+                    <!-- الروابط الحالية -->
+                    <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle dark mode">
+                        <i id="theme-icon" class="fas fa-moon"></i>
+                    </button>
+                </div>
 
             </div>
 
@@ -88,9 +103,11 @@ if (!isset($_SESSION['user_id'])) {
         <div class="card">
             <h1>About Us</h1>
             <p>
-                At "My Store", we are committed to offering the best products and customer service. Our mission is to provide high-quality products at great prices. Learn more about our journey and values here.
+                At "My Store", we are committed to offering the best products and customer service. Our mission is to
+                provide high-quality products at great prices. Learn more about our journey and values here.
                 <br><br>
-                Our company was founded in [...] with the goal of [...], and we take pride in our specialized team that is always striving to offer the best to our customers.
+                Our company was founded in [...] with the goal of [...], and we take pride in our specialized team that
+                is always striving to offer the best to our customers.
                 <br><br>
                 Our core values are: quality, reliability, and innovation.
                 <br><br>
@@ -105,7 +122,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 

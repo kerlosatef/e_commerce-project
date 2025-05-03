@@ -914,321 +914,263 @@ footer {
     color: white;
 }
 
-/* Basic CSS Reset */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* زر تبديل الوضع */
+.theme-toggle-button {
+    background: none;
+    border: none;
+    color: var(--navbar-text);
+    cursor: pointer;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    border-radius: var(--rounded-md);
+    transition: background-color var(--transition-duration) var(--transition-timing);
 }
 
-/* Theme Variables */
-:root {
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --card-bg-color: #f9f9f9;
-    --border-color: #dddddd;
-    --input-bg-color: #ffffff;
-    --input-border-color: #cccccc;
-    --button-bg-color: #007bff;
-    --button-text-color: #ffffff;
-    --link-color: #007bff;
-    --navbar-bg: #f8f9fa;
-    --navbar-text: #343a40;
-    --footer-bg: #f1f1f1;
-    --error-bg: #f8d7da;
-    --error-text: #721c24;
-    --error-border: #f5c6cb;
-    --body-font: 'Cairo', sans-serif;
-    /* Use Cairo font */
+.theme-toggle-button:hover {
+    background-color: var(--color-gray-100);
 }
 
-body.dark-mode {
+/* أيقونات Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+/* تعديلات الوضع الليلي */
+.dark-mode {
     --bg-color: #1a1a1a;
-    /* Darker background */
     --text-color: #e0e0e0;
-    /* Lighter text */
     --card-bg-color: #2c2c2c;
-    /* Darker card */
     --border-color: #444444;
-    /* Darker border */
     --input-bg-color: #333333;
-    /* Darker input */
     --input-border-color: #555555;
     --button-bg-color: #0056b3;
-    /* Slightly different button color */
     --button-text-color: #ffffff;
     --link-color: #4dabf7;
-    /* Lighter link */
     --navbar-bg: #212529;
-    /* Dark navbar */
     --navbar-text: #f8f9fa;
-    /* Light navbar text */
     --footer-bg: #2c2c2c;
-    /* Dark footer */
     --error-bg: #5a1a2e;
-    /* Darker error background */
     --error-text: #f8d7da;
-    /* Lighter error text */
     --error-border: #a71d2a;
 }
 
-/* General Body Styles */
-body {
-    font-family: var(--body-font);
+/* تطبيق الألوان في الوضع الليلي */
+.dark-mode body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    /* Ensure footer stays at bottom */
 }
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-/* Navbar Styles */
-.navbar {
+.dark-mode .navbar {
     background-color: var(--navbar-bg);
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border-color);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
     color: var(--navbar-text);
-    text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-/* Theme Toggle Button Styles */
-#theme-toggle {
-    background: none;
-    border: 1px solid var(--navbar-text);
-    color: var(--navbar-text);
-    padding: 0.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    /* Icon size */
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-#theme-toggle:hover {
-    background-color: rgba(128, 128, 128, 0.1);
-    /* Subtle hover for both modes */
-}
-
-/* Main Content Styles */
-.page-content {
-    flex-grow: 1;
-    /* Make main content take available space */
-    padding: 2rem 0;
-}
-
-/* Authentication Form Styles */
-.auth-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.auth-card {
-    background-color: var(--card-bg-color);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--border-color);
-    width: 100%;
-    max-width: 400px;
-    /* Limit card width */
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.auth-title {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+.dark-mode .navbar-link,
+.dark-mode .products-dropdown-link,
+.dark-mode .auth-link,
+.dark-mode .auth-title,
+.dark-mode .auth-remember label,
+.dark-mode .auth-switch p,
+.dark-mode .footer-content p {
     color: var(--text-color);
-    transition: color 0.3s ease;
 }
 
-.auth-form .login-input-group {
-    margin-bottom: 1rem;
+.dark-mode .auth-card,
+.dark-mode .product-card {
+    background-color: var(--card-bg-color);
+    border-color: var(--border-color);
 }
 
-.auth-form input[type="email"],
-.auth-form input[type="password"],
-.auth-form input[type="text"] {
-    /* Added text type for password toggle */
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid var(--input-border-color);
-    border-radius: 4px;
+.dark-mode input,
+.dark-mode textarea {
     background-color: var(--input-bg-color);
     color: var(--text-color);
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    /* Add space between inputs */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    border-color: var(--input-border-color);
 }
 
-.auth-form input[type="email"]:focus,
-.auth-form input[type="password"]:focus,
-.auth-form input[type="text"]:focus {
-    outline: none;
-    border-color: var(--link-color);
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-    /* Focus ring */
+/* أنماط الوضع الليلي */
+.dark-mode {
+    background-color: #121212;
+    /* لون خلفية داكن */
 }
 
-
-.password-container {
-    position: relative;
-    width: 100%;
-    margin-bottom: 0.5rem;
-    /* Match input margin */
+.dark-mode .auth-card {
+    background-color: #1e1e1e;
+    /* لون بطاقة داكن */
+    color: #ffffff;
+    /* لون النص الأبيض */
+    border: 1px solid #333;
+    /* حدود داكنة */
 }
 
-/* Adjust padding for RTL */
-.password-container input {
-    padding-left: 40px;
-    /* Space for icon on the left in RTL */
-    padding-right: 0.8rem;
-    /* Reset right padding */
-    margin-bottom: 0;
-    /* Remove bottom margin from input inside container */
+.dark-mode input {
+    background-color: #2d2d2d;
+    /* خلفية حقول الإدخال */
+    color: #ffffff;
+    /* لون النص */
+    border-color: #444;
+    /* لون الحدود */
 }
 
-.password-container i {
-    position: absolute;
-    left: 10px;
-    /* Icon on the left */
-    right: auto;
-    /* Reset right */
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #aaa;
-    /* Icon color */
-    transition: color 0.2s;
+.dark-mode .button-primary {
+    background-color: #3a5c8a;
+    /* لون زر مختلف في الوضع الليلي */
 }
 
-.password-container i:hover {
-    color: var(--text-color);
+.dark-mode .auth-link {
+    color: #64b5f6;
+    /* لون الروابط في الوضع الليلي */
 }
 
-.auth-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
+.dark-mode .error-message {
+    background-color: #5a1a2e;
+    /* لون رسائل الخطأ */
+    color: #ffcdd2;
 }
 
-.auth-remember {
-    display: flex;
-    align-items: center;
-}
-
-.auth-remember input[type="checkbox"] {
-    margin-left: 0.5rem;
-    /* Adjusted margin for RTL */
-    margin-right: 0;
-}
-
-.auth-link {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.auth-link:hover {
-    text-decoration: underline;
-}
-
-.button {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.button-primary {
-    background-color: var(--button-bg-color);
-    color: var(--button-text-color);
-}
-
-.button-primary:hover {
-    opacity: 0.9;
-}
-
-.button-fullwidth {
-    width: 100%;
-}
-
-.auth-switch {
-    text-align: center;
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
-}
-
-/* Error Message Styles */
-.error-message {
-    background-color: var(--error-bg);
-    color: var(--error-text);
-    border: 1px solid var(--error-border);
-    padding: 0.8rem;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Footer Styles */
+/* أنماط التذييل العادية */
 footer {
-    background-color: var(--footer-bg);
-    color: var(--text-color);
-    /* Use text color for footer text */
-    padding: 1rem 0;
-    margin-top: auto;
-    /* Push footer to bottom */
-    text-align: center;
-    font-size: 0.9rem;
-    border-top: 1px solid var(--border-color);
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-gray-200);
+    padding: var(--space-8) 0;
+    transition: all var(--transition-duration) var(--transition-timing);
 }
 
-/* Screen Reader Only */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+.footer-content {
+    text-align: center;
+    color: var(--color-gray-700);
+}
+
+/* أنماط التذييل في الوضع الليلي */
+.dark-mode footer {
+    background-color: #1a1a1a;
+    /* لون خلفية داكن للتذييل */
+    border-top: 1px solid #333;
+    /* لون حدود داكن */
+}
+
+.dark-mode .footer-content {
+    color: #e0e0e0;
+    /* لون نص فاتح للتذييل */
+}
+
+.dark-mode .footer-content a {
+    color: #64b5f6;
+    /* لون الروابط في التذييل */
+}
+
+.dark-mode .footer-content a:hover {
+    color: #42a5f5;
+    /* لون روابط التذييل عند التمرير */
+}
+
+/* تعديل لون الشعار في الوضع الليلي */
+.dark-mode .navbar-brand {
+    color: #ffffff !important;
+    /* أبيض */
+}
+
+/* تعديل ألوان بطاقات المنتجات في الوضع الليلي */
+.dark-mode .product-card {
+    background-color: #2c2c2c;
+    /* خلفية داكنة */
+    border-color: #444;
+    /* حدود داكنة */
+}
+
+.dark-mode .product-title,
+.dark-mode .product-description,
+.dark-mode .product-price {
+    color: #ffffff !important;
+    /* أبيض */
+}
+
+.dark-mode .products-dropdown-link {
+    color: #ffffff !important;
+    /* أبيض */
+}
+
+/* تعديل ألوان القائمة المنسدلة للمنتجات */
+.dark-mode .products-dropdown-menu {
+    background-color: #2c2c2c;
+    /* خلفية داكنة */
+    border-color: #444;
+    /* حدود داكنة */
+}
+
+.dark-mode .products-dropdown-button {
+    color: #ffffff !important;
+    /* أبيض */
+}
+
+/* تعديل ألوان الروابط في القائمة المنسدلة */
+.dark-mode .products-dropdown-link:hover {
+    background-color: #3a3a3a;
+    /* خلفية داكنة فاتحة عند التمرير */
+    color: #ffffff !important;
+    /* أبيض */
+}
+
+/* أنماط صفحة الإعدادات */
+#settings .card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--space-8);
+}
+
+.settings-option {
+    margin-bottom: var(--space-6);
+    padding: var(--space-4);
+    border-radius: var(--rounded-md);
+    background-color: var(--color-gray-100);
+}
+
+.settings-option h3 {
+    margin-bottom: var(--space-3);
+    color: var(--color-gray-800);
+}
+
+.theme-toggle-button.standalone {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-base);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-300);
+}
+
+.dark-mode .settings-option {
+    background-color: var(--color-gray-800);
+}
+
+.dark-mode .settings-option h3 {
+    color: var(--color-gray-100);
+}
+
+.dark-mode .theme-toggle-button.standalone {
+    background-color: var(--color-gray-700);
+    border-color: var(--color-gray-600);
+    color: var(--color-white);
+}
+
+.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --card-bg-color: #2c2c2c;
+    --border-color: #444;
+    --navbar-bg: #212529;
+    --navbar-text: #f8f9fa;
+    --footer-bg: #1a1a1a;
+}
+
+.dark-mode body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.dark-mode .navbar {
+    background-color: var(--navbar-bg);
+}
+
+.dark-mode footer {
+    background-color: var(--footer-bg);
 }

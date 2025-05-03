@@ -19,6 +19,12 @@ if (!isset($_SESSION['user_id'])) {
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
+<head>
+    <!-- العناصر الحالية -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+
 <body>
 
     <nav class="navbar">
@@ -48,12 +54,18 @@ if (!isset($_SESSION['user_id'])) {
                 </div>
 
                 <?php if (isset($_SESSION['user_id'])): ?>
-    <a href="logout.php" class="navbar-link nav-link logout">Logout</a>
-<?php else: ?>
-    <a href="login.php" class="navbar-link nav-link" data-page="login">Login</a>
-    <a href="register.php" class="button button-primary nav-link" data-page="register" style="margin-right: var(--space-4);">Register</a>
-<?php endif; ?>
-
+                    <a href="logout.php" class="navbar-link nav-link logout">Logout</a>
+                <?php else: ?>
+                    <a href="login.php" class="navbar-link nav-link" data-page="login">Login</a>
+                    <a href="register.php" class="button button-primary nav-link" data-page="register"
+                        style="margin-right: var(--space-4);">Register</a>
+                <?php endif; ?>
+                <div class="navbar-menu-desktop">
+                    <!-- الروابط الحالية -->
+                    <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle dark mode">
+                        <i id="theme-icon" class="fas fa-moon"></i>
+                    </button>
+                </div>
 
             </div>
 
@@ -98,8 +110,10 @@ if (!isset($_SESSION['user_id'])) {
                     <div class="product-detail-category">Tool</div>
                     <h1 class="product-detail-title">Awesome Tool</h1>
                     <p class="product-detail-description">
-                        This is a detailed description of the awesome tool. It has many features that will make your life better.
-                        Made from high-quality materials to ensure durability and longevity. A modern design that suits all tastes.
+                        This is a detailed description of the awesome tool. It has many features that will make your
+                        life better.
+                        Made from high-quality materials to ensure durability and longevity. A modern design that suits
+                        all tastes.
                         Perfect for daily use or as a valuable gift.
                         <br><br>
                         <strong>Specifications:</strong>
@@ -126,7 +140,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 

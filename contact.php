@@ -17,7 +17,13 @@ if (!isset($_SESSION['user_id'])) {
     <title>My E-commerce Store - Contact Us</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <head>
+        <!-- العناصر الحالية -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    </head>
 </head>
+
 
 <body>
 
@@ -48,12 +54,19 @@ if (!isset($_SESSION['user_id'])) {
                 </div>
 
                 <?php if (isset($_SESSION['user_id'])): ?>
-    <a href="logout.php" class="navbar-link nav-link logout">Logout</a>
-            <?php else: ?>
-    <a href="login.php" class="navbar-link nav-link" data-page="login">Login</a>
-    <a href="register.php" class="button button-primary nav-link" data-page="register" style="margin-right: var(--space-4);">Register</a>
-          <?php endif; ?>
+                    <a href="logout.php" class="navbar-link nav-link logout">Logout</a>
+                <?php else: ?>
+                    <a href="login.php" class="navbar-link nav-link" data-page="login">Login</a>
+                    <a href="register.php" class="button button-primary nav-link" data-page="register"
+                        style="margin-right: var(--space-4);">Register</a>
+                <?php endif; ?>
 
+                <div class="navbar-menu-desktop">
+                    <!-- الروابط الحالية -->
+                    <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle dark mode">
+                        <i id="theme-icon" class="fas fa-moon"></i>
+                    </button>
+                </div>
 
             </div>
 
@@ -83,13 +96,18 @@ if (!isset($_SESSION['user_id'])) {
             <a href="product3.php" class="navbar-link nav-link" data-page="product3">Product 3</a>
             <a href="login.php" class="navbar-link nav-link" data-page="login">Login</a>
             <a href="register.php" class="navbar-link nav-link" data-page="register">Register</a>
+            <!-- الروابط الحالية -->
+            <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle dark mode">
+                <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
         </div>
     </nav>
 
     <main class="container page-content" id="contact">
         <div class="card">
             <h1>Contact Us</h1>
-            <p>Have any questions? We would love to hear from you. Reach out to us via the form below or using our contact details.</p>
+            <p>Have any questions? We would love to hear from you. Reach out to us via the form below or using our
+                contact details.</p>
             <form action="#" method="POST" class="contact-form">
                 <div>
                     <label for="name">Full Name</label>
@@ -123,7 +141,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 
