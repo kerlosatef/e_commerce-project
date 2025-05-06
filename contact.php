@@ -19,7 +19,7 @@ if (!isset($_SESSION['user_id'])) {
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <head>
-        <!-- العناصر الحالية -->
+
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     </head>
 </head>
@@ -30,7 +30,7 @@ if (!isset($_SESSION['user_id'])) {
     <nav class="navbar">
         <div class="container navbar-container">
             <div class="navbar-brand-wrapper">
-                <a href="index.php" class="navbar-brand">My Store</a>
+                <a href="index.php" class="navbar-brand">GlowFit</a>
             </div>
 
             <div class="navbar-menu-desktop">
@@ -62,7 +62,7 @@ if (!isset($_SESSION['user_id'])) {
                 <?php endif; ?>
 
                 <div class="navbar-menu-desktop">
-                    <!-- الروابط الحالية -->
+
                     <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle dark mode">
                         <i id="theme-icon" class="fas fa-moon"></i>
                     </button>
@@ -96,7 +96,7 @@ if (!isset($_SESSION['user_id'])) {
             <a href="product3.php" class="navbar-link nav-link" data-page="product3">Product 3</a>
             <a href="login.php" class="navbar-link nav-link" data-page="login">Login</a>
             <a href="register.php" class="navbar-link nav-link" data-page="register">Register</a>
-            <!-- الروابط الحالية -->
+
             <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle dark mode">
                 <i id="theme-icon" class="fas fa-moon"></i>
             </button>
@@ -130,14 +130,14 @@ if (!isset($_SESSION['user_id'])) {
             <div class="contact-info">
                 <p>Or contact us at:</p>
                 <p class="contact-detail">Email: support@myshop.com</p>
-                <p class="contact-detail">Phone: 890-567-1234 (1+)</p>
+                <p class="contact-detail">Phone: 0123456789</p>
             </div>
         </div>
     </main>
 
     <footer>
         <div class="container footer-content">
-            <p>&copy; 2025 My Store. All rights reserved.</p>
+            <p>&copy; 2025 GlowFit. All rights reserved.</p>
         </div>
     </footer>
 

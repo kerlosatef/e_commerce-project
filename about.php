@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// إذا لم يكن المستخدم قد سجل دخوله، يتم توجيهه إلى صفحة الدخول
+
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
@@ -21,7 +21,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <head>
-    <!-- العناصر الحالية -->
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -30,7 +30,7 @@ if (!isset($_SESSION['user_id'])) {
     <nav class="navbar">
         <div class="container navbar-container">
             <div class="navbar-brand-wrapper">
-                <a href="index.php" class="navbar-brand">My Store</a>
+                <a href="index.php" class="navbar-brand">GlowFit</a>
             </div>
             <div class="navbar-menu-desktop">
                 <a href="index.php" class="navbar-link nav-link" data-page="index">Home</a>
@@ -62,7 +62,7 @@ if (!isset($_SESSION['user_id'])) {
                         style="margin-right: var(--space-4);">Register</a>
                 <?php endif; ?>
                 <div class="navbar-menu-desktop">
-                    <!-- الروابط الحالية -->
+
                     <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle dark mode">
                         <i id="theme-icon" class="fas fa-moon"></i>
                     </button>
@@ -103,22 +103,20 @@ if (!isset($_SESSION['user_id'])) {
         <div class="card">
             <h1>About Us</h1>
             <p>
-                At "My Store", we are committed to offering the best products and customer service. Our mission is to
-                provide high-quality products at great prices. Learn more about our journey and values here.
+                <br>At GlowFit, we believe that style begins with the right choice. We are a fashion-forward clothing
+                store dedicated to bringing you the latest trends with high quality and affordable prices. Our goal is
+                to make your shopping experience enjoyable, comfortable, and full of confidence.<br>
+                <br> Our Mission
+                To provide stylish clothing for all occasions and tastes, with a strong commitment to quality,
+                competitive pricing, and excellent customer service.<br>
                 <br><br>
-                Our company was founded in [...] with the goal of [...], and we take pride in our specialized team that
-                is always striving to offer the best to our customers.
-                <br><br>
-                Our core values are: quality, reliability, and innovation.
-                <br><br>
-                [Add more content about your company history, mission, team, etc.]
             </p>
         </div>
     </main>
 
     <footer>
         <div class="container footer-content">
-            <p>&copy; 2025 My Store. All rights reserved.</p>
+            <p>&copy; 2025 GlowFit. All rights reserved.</p>
         </div>
     </footer>
 

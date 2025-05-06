@@ -1,19 +1,19 @@
 <?php
 session_start();
-include('db_connection.php'); // الاتصال بقاعدة البيانات
+include('db_connection.php');
 
-// التحقق من إرسال البيانات عبر النموذج
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirm-password'];
 
-    // التحقق من أن كلمة المرور وتأكيد كلمة المرور متطابقتان
+
     if ($password !== $confirmPassword) {
         $error_message = "Passwords do not match!";
     } else {
-        // التحقق إذا كان البريد الإلكتروني موجود بالفعل في قاعدة البيانات
+
         $query = "SELECT * FROM users WHERE email=?";
         $stmt = $connection->prepare($query);
         $stmt->bind_param("s", $email);
@@ -21,19 +21,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            // إذا كان البريد الإلكتروني موجودًا، إظهار رسالة الخطأ
+
             $error_message = "Email is already registered!";
         } else {
-            // تشفير كلمة المرور
+
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-            // الاستعلام لإدخال البيانات في قاعدة البيانات
             $query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
             $stmt = $connection->prepare($query);
             $stmt->bind_param("sss", $name, $email, $hashed_password);
 
             if ($stmt->execute()) {
-                // توجيه المستخدم إلى صفحة الدخول بعد التسجيل الناجح
+
                 header('Location: login.php');
                 exit();
             } else {
@@ -56,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <head>
-    <!-- العناصر الحالية -->
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -65,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <nav class="navbar">
         <div class="container navbar-container">
             <div class="navbar-brand-wrapper">
-                <a href="index.php" class="navbar-brand">My Store</a>
+                <a href="index.php" class="navbar-brand">GlowFit</a>
             </div>
             <div class="navbar-menu-desktop">
                 <a href="index.php" class="navbar-link nav-link" data-page="index">Home</a>
@@ -90,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <a href="register.php" class="button button-primary nav-link" data-page="register"
                     style="margin-right: var(--space-4);">Register</a>
                 <div class="navbar-menu-desktop">
-                    <!-- الروابط الحالية -->
+
                     <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle dark mode">
                         <i id="theme-icon" class="fas fa-moon"></i>
                     </button>
@@ -176,7 +175,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <footer>
         <div class="container footer-content">
-            <p>&copy; 2025 My Store. All rights reserved.</p>
+            <p>&copy; 2025 GlowFit. All rights reserved.</p>
         </div>
     </footer>
 

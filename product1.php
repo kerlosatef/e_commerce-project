@@ -30,7 +30,7 @@ if (!isset($_SESSION['user_id'])) {
     <nav class="navbar">
         <div class="container navbar-container">
             <div class="navbar-brand-wrapper">
-                <a href="index.php" class="navbar-brand">My Store</a>
+                <a href="index.php" class="navbar-brand">GlowFit</a>
             </div>
 
             <div class="navbar-menu-desktop">
@@ -102,30 +102,20 @@ if (!isset($_SESSION['user_id'])) {
         <div class="product-detail-card">
             <div class="product-detail-layout">
                 <div class="product-detail-image-wrapper">
-                    <img class="product-detail-image" src="https://placehold.co/600x400/e2e8f0/cbd5e0?text=Product+1"
-                        alt="Product 1 Large Image"
+                    <img class="product-detail-image" src="photo/widleg1.jpg" alt="Product 1 Large Image"
                         onerror="this.src='https://placehold.co/600x400/e2e8f0/cbd5e0?text=Image+Not+Found'">
                 </div>
                 <div class="product-detail-info">
-                    <div class="product-detail-category">Tool</div>
-                    <h1 class="product-detail-title">Awesome Tool</h1>
+                    <h1 class="product-detail-title">WIDE FIT PLEATED TROUSERS</h1>
                     <p class="product-detail-description">
-                        This is a detailed description of the awesome tool. It has many features that will make your
-                        life better.
-                        Made from high-quality materials to ensure durability and longevity. A modern design that suits
-                        all tastes.
-                        Perfect for daily use or as a valuable gift.
+                        Relaxed fit cotton corduroy trousers. Featuring front pockets, patch pockets on the back,
+                        multi-functional straps and leg pockets. Zip fly and top button fastening.
                         <br><br>
-                        <strong>Specifications:</strong>
-                    <ul>
-                        <li>Material: Rust-resistant metal</li>
-                        <li>Dimensions: 10 cm x 5 cm x 2 cm</li>
-                        <li>Weight: 150 grams</li>
-                        <li>Color: Silver</li>
-                    </ul>
-                    [Add more details, specifications, features, etc.]
+
+
+
                     </p>
-                    <p class="product-detail-price">99.99 SAR</p>
+                    <p class="product-detail-price">2,490 EGP</p>
                     <button class="button button-primary button-large product-detail-button">
                         Add to Cart
                     </button>
@@ -136,7 +126,7 @@ if (!isset($_SESSION['user_id'])) {
 
     <footer>
         <div class="container footer-content">
-            <p>&copy; 2025 My Store. All rights reserved.</p>
+            <p>&copy; 2025 GlowFit. All rights reserved.</p>
         </div>
     </footer>
 

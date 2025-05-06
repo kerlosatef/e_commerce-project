@@ -1,4 +1,3 @@
-/* إعادة الضبط الأساسية والأنماط العامة */
 *,
 *::before,
 *::after {
@@ -8,7 +7,6 @@
 }
 
 :root {
-    /* لوحة الألوان (مستوحاة من Tailwind) */
     --color-indigo-600: #4f46e5;
     --color-indigo-700: #4338ca;
     --color-indigo-500: #6366f1;
@@ -24,62 +22,38 @@
     --color-white: #ffffff;
     --color-black: #000000;
     --color-red-500: #ef4444;
-    /* مثال لحالات الخطأ المحتملة */
 
-    /* المسافات (مستوحاة من Tailwind) */
     --space-1: 0.25rem;
-    /* 4px */
     --space-2: 0.5rem;
-    /* 8px */
     --space-3: 0.75rem;
-    /* 12px */
     --space-4: 1rem;
-    /* 16px */
     --space-5: 1.25rem;
-    /* 20px */
     --space-6: 1.5rem;
-    /* 24px */
     --space-8: 2rem;
-    /* 32px */
     --space-10: 2.5rem;
-    /* 40px */
     --space-12: 3rem;
-    /* 48px */
 
-    /* أحجام الخطوط */
     --text-sm: 0.875rem;
-    /* 14px */
     --text-base: 1rem;
-    /* 16px */
     --text-lg: 1.125rem;
-    /* 18px */
     --text-xl: 1.25rem;
-    /* 20px */
     --text-2xl: 1.5rem;
-    /* 24px */
     --text-3xl: 1.875rem;
-    /* 30px */
 
-    /* أوزان الخطوط */
     --font-normal: 400;
     --font-medium: 500;
     --font-semibold: 600;
     --font-bold: 700;
     --font-extrabold: 800;
 
-    /* الحدود */
     --rounded-md: 0.375rem;
-    /* 6px */
     --rounded-lg: 0.5rem;
-    /* 8px */
     --border-width: 1px;
 
-    /* الظلال */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
-    /* الانتقالات */
     --transition-duration: 150ms;
     --transition-timing: ease-in-out;
 }
@@ -90,7 +64,6 @@ body {
     color: var(--color-gray-900);
     line-height: 1.6;
     direction: ltr;
-    /* تغيير اتجاه النص من اليسار لليمين */
 }
 
 a {
@@ -170,7 +143,7 @@ label {
     }
 }
 
-/* شريط التنقل */
+
 .navbar {
     background-color: var(--color-white);
     box-shadow: var(--shadow-md);
@@ -213,12 +186,10 @@ label {
     font-weight: var(--font-medium);
 }
 
-/* تنسيق الرابط النشط */
 .navbar-link.active {
     color: var(--color-indigo-600);
     font-weight: var(--font-semibold);
     background-color: var(--color-gray-100);
-    /* تمييز إضافي */
 }
 
 .navbar-link:hover {
@@ -226,7 +197,6 @@ label {
     background-color: var(--color-gray-100);
 }
 
-/* القائمة المنسدلة للمنتجات */
 .products-dropdown {
     position: relative;
 }
@@ -278,13 +248,11 @@ label {
     color: var(--color-indigo-600);
 }
 
-/* تمييز رابط المنتج النشط (إذا لزم الأمر) */
 .products-dropdown-link.active {
     font-weight: var(--font-semibold);
     color: var(--color-indigo-600);
 }
 
-/* الأزرار */
 .button {
     display: inline-flex;
     align-items: center;
@@ -319,7 +287,6 @@ label {
     font-size: var(--text-base);
 }
 
-/* قائمة الموبايل */
 .navbar-mobile-button {
     display: inline-flex;
     align-items: center;
@@ -375,14 +342,12 @@ label {
     text-align: right;
 }
 
-/* تمييز الرابط النشط في قائمة الموبايل */
 .navbar-menu-mobile .navbar-link.active {
     color: var(--color-indigo-600);
     font-weight: var(--font-semibold);
     background-color: var(--color-gray-100);
 }
 
-/* منطقة المحتوى الرئيسية */
 main.page-content {
     padding-top: var(--space-6);
     padding-bottom: var(--space-6);
@@ -753,7 +718,6 @@ p:last-child {
     margin-top: var(--space-6);
 }
 
-/* التذييل */
 footer {
     background-color: var(--color-white);
     margin-top: var(--space-12);
@@ -772,7 +736,6 @@ footer {
     margin-bottom: 0;
 }
 
-/* Basic Styles */
 body {
     font-family: 'Cairo', sans-serif;
     background-color: #f5f5f5;
@@ -785,7 +748,6 @@ body {
     margin: 0 auto;
 }
 
-/* Promo Banner Styles */
 #promo-banner {
     background-color: #ff6f61;
     color: #fff;
@@ -800,7 +762,6 @@ body {
     animation: slideBanner 10s linear infinite;
 }
 
-/* Animation for the moving banner */
 @keyframes slideBanner {
     0% {
         transform: translateX(100%);
@@ -827,7 +788,6 @@ body {
     }
 }
 
-/* Navbar Styles */
 .navbar {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -871,7 +831,6 @@ footer {
 
 #promo {
     background-color: #4f46e5;
-    /* لون خلفية الشريط */
     padding: 1rem;
     color: white;
     text-align: center;
@@ -882,25 +841,19 @@ footer {
     font-size: 1.25rem;
     font-weight: bold;
     white-space: nowrap;
-    /* التأكد من عدم التفاف النص */
     animation: slide 15s linear infinite;
-    /* تعيين تأثير الحركة */
 }
 
-/* تأثير الحركة */
 @keyframes slide {
     0% {
         transform: translateX(100%);
-        /* يبدأ من الجهة اليمنى */
     }
 
     100% {
         transform: translateX(-100%);
-        /* ينتهي في الجهة اليسرى */
     }
 }
 
-/* تغيير لون زر Logout إلى الأحمر */
 .navbar-link.nav-link.logout {
     background-color: red;
     color: white;
@@ -914,7 +867,6 @@ footer {
     color: white;
 }
 
-/* زر تبديل الوضع */
 .theme-toggle-button {
     background: none;
     border: none;
@@ -933,10 +885,8 @@ footer {
     background-color: var(--color-gray-100);
 }
 
-/* أيقونات Font Awesome */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
-/* تعديلات الوضع الليلي */
 .dark-mode {
     --bg-color: #1a1a1a;
     --text-color: #e0e0e0;
@@ -955,7 +905,6 @@ footer {
     --error-border: #a71d2a;
 }
 
-/* تطبيق الألوان في الوضع الليلي */
 .dark-mode body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -989,47 +938,35 @@ footer {
     border-color: var(--input-border-color);
 }
 
-/* أنماط الوضع الليلي */
 .dark-mode {
     background-color: #121212;
-    /* لون خلفية داكن */
 }
 
 .dark-mode .auth-card {
     background-color: #1e1e1e;
-    /* لون بطاقة داكن */
     color: #ffffff;
-    /* لون النص الأبيض */
     border: 1px solid #333;
-    /* حدود داكنة */
 }
 
 .dark-mode input {
     background-color: #2d2d2d;
-    /* خلفية حقول الإدخال */
     color: #ffffff;
-    /* لون النص */
     border-color: #444;
-    /* لون الحدود */
 }
 
 .dark-mode .button-primary {
     background-color: #3a5c8a;
-    /* لون زر مختلف في الوضع الليلي */
 }
 
 .dark-mode .auth-link {
     color: #64b5f6;
-    /* لون الروابط في الوضع الليلي */
 }
 
 .dark-mode .error-message {
     background-color: #5a1a2e;
-    /* لون رسائل الخطأ */
     color: #ffcdd2;
 }
 
-/* أنماط التذييل العادية */
 footer {
     background-color: var(--color-white);
     border-top: 1px solid var(--color-gray-200);
@@ -1042,77 +979,56 @@ footer {
     color: var(--color-gray-700);
 }
 
-/* أنماط التذييل في الوضع الليلي */
 .dark-mode footer {
     background-color: #1a1a1a;
-    /* لون خلفية داكن للتذييل */
     border-top: 1px solid #333;
-    /* لون حدود داكن */
 }
 
 .dark-mode .footer-content {
     color: #e0e0e0;
-    /* لون نص فاتح للتذييل */
 }
 
 .dark-mode .footer-content a {
     color: #64b5f6;
-    /* لون الروابط في التذييل */
 }
 
 .dark-mode .footer-content a:hover {
     color: #42a5f5;
-    /* لون روابط التذييل عند التمرير */
 }
 
-/* تعديل لون الشعار في الوضع الليلي */
 .dark-mode .navbar-brand {
     color: #ffffff !important;
-    /* أبيض */
 }
 
-/* تعديل ألوان بطاقات المنتجات في الوضع الليلي */
 .dark-mode .product-card {
     background-color: #2c2c2c;
-    /* خلفية داكنة */
     border-color: #444;
-    /* حدود داكنة */
 }
 
 .dark-mode .product-title,
 .dark-mode .product-description,
 .dark-mode .product-price {
     color: #ffffff !important;
-    /* أبيض */
 }
 
 .dark-mode .products-dropdown-link {
     color: #ffffff !important;
-    /* أبيض */
 }
 
-/* تعديل ألوان القائمة المنسدلة للمنتجات */
 .dark-mode .products-dropdown-menu {
     background-color: #2c2c2c;
-    /* خلفية داكنة */
     border-color: #444;
-    /* حدود داكنة */
 }
 
 .dark-mode .products-dropdown-button {
     color: #ffffff !important;
-    /* أبيض */
 }
 
-/* تعديل ألوان الروابط في القائمة المنسدلة */
 .dark-mode .products-dropdown-link:hover {
     background-color: #3a3a3a;
-    /* خلفية داكنة فاتحة عند التمرير */
     color: #ffffff !important;
-    /* أبيض */
 }
 
-/* أنماط صفحة الإعدادات */
 #settings .card {
     max-width: 600px;
     margin: 0 auto;
@@ -1173,4 +1089,19 @@ footer {
 
 .dark-mode footer {
     background-color: var(--footer-bg);
+}
+
+/* الوضع العادي */
+.page-heading,
+.page-subheading,
+.section-title {
+    color: var(--color-gray-900);
+}
+
+/* الوضع الليلي */
+.dark-mode .page-heading,
+.dark-mode .page-subheading,
+.dark-mode .section-title {
+    color: #ffffff;
+
 }

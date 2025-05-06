@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// إذا لم يكن المستخدم قد سجل دخوله، يتم توجيهه إلى صفحة الدخول
+
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
@@ -20,7 +20,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <head>
-    <!-- العناصر الحالية -->
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id'])) {
     <nav class="navbar">
         <div class="container navbar-container">
             <div class="navbar-brand-wrapper">
-                <a href="index.php" class="navbar-brand">My Store</a>
+                <a href="index.php" class="navbar-brand">GlowFit</a>
             </div>
 
             <div class="navbar-menu-desktop">
@@ -59,7 +59,7 @@ if (!isset($_SESSION['user_id'])) {
                         style="margin-right: var(--space-4);">Register</a>
                 <?php endif; ?>
                 <div class="navbar-menu-desktop">
-                    <!-- الروابط الحالية -->
+
                     <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle dark mode">
                         <i id="theme-icon" class="fas fa-moon"></i>
                     </button>
@@ -94,10 +94,10 @@ if (!isset($_SESSION['user_id'])) {
             <a href="product3.php" class="navbar-link nav-link" data-page="product3">Product 3</a>
 
             <?php if (isset($_SESSION['user_id'])): ?>
-                <!-- إذا كان المستخدم مسجلاً دخوله، عرض Logout بدلاً من Login و Register -->
+
                 <a href="logout.php" class="navbar-link nav-link button-red">Logout</a>
             <?php else: ?>
-                <!-- إذا كان المستخدم غير مسجل، عرض Login و Register -->
+
                 <a href="login.php" class="navbar-link nav-link" data-page="login">Login</a>
                 <a href="register.php" class="navbar-link nav-link" data-page="register">Register</a>
             <?php endif; ?>
@@ -109,45 +109,43 @@ if (!isset($_SESSION['user_id'])) {
     </nav>
 
     <main class="container page-content" id="home">
-        <h1>Welcome to My Store!</h1>
-        <p>Your one-stop shop for the best products.</p>
+        <h1 class="page-heading">Welcome to GlowFit!</h1>
+        <p class="page-subheading">Your one-stop shop for the best products.</p>
+        <h2 class="section-title">Featured Products</h2>
 
-        <h2>Featured Products</h2>
         <div class="product-grid">
             <div class="product-card">
-                <img src="https://placehold.co/600x400/e2e8f0/cbd5e0?text=Product+1" alt="Product 1 image"
-                    class="product-image"
+                <img src="photo/widleg1.jpg" alt="Product 1 image" class="product-image"
                     onerror="this.src='https://placehold.co/600x400/e2e8f0/cbd5e0?text=Image+Not+Found'">
                 <div class="product-info">
-                    <h3 class="product-title">Awesome Gadget</h3>
-                    <p class="product-description">A cool and practical gadget you'll definitely need.</p>
-                    <p class="product-price">99.99 SAR</p>
+                    <h3 class="product-title">WIDE FIT PLEATED TROUSERS</h3>
+                    <p class="product-description">Wide-leg trousers. Elasticated waist with front pleat detail.</p>
+                    <p class="product-price">2,490 EGP</p>
                     <a href="product1.php" class="button button-primary button-fullwidth">
                         View Details
                     </a>
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://placehold.co/600x400/dbeafe/bfdbfe?text=Product+2" alt="Product 2 image"
-                    class="product-image"
+                <img src="photo/wideleg2.jpg" alt="Product 2 image" class="product-image"
                     onerror="this.src='https://placehold.co/600x400/e2e8f0/cbd5e0?text=Image+Not+Found'">
                 <div class="product-info">
-                    <h3 class="product-title">Stylish Thing</h3>
-                    <p class="product-description">An elegant item that adds a touch of beauty.</p>
-                    <p class="product-price">49.50 SAR</p>
+                    <h3 class="product-title">CORDUROY CARPENTER TROUSERS</h3>
+                    <p class="product-description">Relaxed fit cotton corduroy trousers. Featuring front pockets</p>
+                    <p class="product-price">3,290 EGP</p>
                     <a href="product2.php" class="button button-primary button-fullwidth">
                         View Details
                     </a>
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://placehold.co/600x400/ccfbf1/99f6e4?text=Product+3" alt="Product 3 image"
-                    class="product-image"
+                <img src="photo/woman.jpg" alt="Product 3 image" class="product-image"
                     onerror="this.src='https://placehold.co/600x400/e2e8f0/cbd5e0?text=Image+Not+Found'">
                 <div class="product-info">
-                    <h3 class="product-title">Useful Widget</h3>
-                    <p class="product-description">Makes your life easier in many ways. Durable construction.</p>
-                    <p class="product-price">25.00 SAR</p>
+                    <h3 class="product-title">ZW COLLECTION HIGH-WAIST PALAZZO JEANS</h3>
+                    <p class="product-description">High-waist jeans with belt loops at the waist. Five pockets. Wide
+                        leg. Front zip and button fastening.</p>
+                    <p class="product-price">3,290 EGP</p>
                     <a href="product3.php" class="button button-primary button-fullwidth">
                         View Details
                     </a>
@@ -164,7 +162,7 @@ if (!isset($_SESSION['user_id'])) {
 
     <footer>
         <div class="container footer-content">
-            <p>&copy; 2025 My Store. All rights reserved.</p>
+            <p>&copy; 2025 GlowFit. All rights reserved.</p>
         </div>
     </footer>
 

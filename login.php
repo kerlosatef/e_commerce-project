@@ -1,13 +1,11 @@
 <?php
 session_start();
-include('db_connection.php'); // Connect to the database
+include('db_connection.php');
 
-// Check if form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Check if the user exists in the database
     $query = "SELECT * FROM users WHERE email=?";
     $stmt = $connection->prepare($query);
     $stmt->bind_param("s", $email);
@@ -15,10 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // Verify the password
         $user = $result->fetch_assoc();
         if (password_verify($password, $user['password'])) {
-            // Set session variable and redirect to home page
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['name'];
             header('Location: index.php');
@@ -43,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <head>
-        <!-- العناصر الحالية -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     </head>
 </head>
@@ -53,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <nav class="navbar">
         <div class="container navbar-container">
             <div class="navbar-brand-wrapper">
-                <a href="index.php" class="navbar-brand">My Store</a>
+                <a href="index.php" class="navbar-brand">GlowFit</a>
             </div>
 
             <div class="navbar-menu-desktop">
@@ -80,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     style="margin-right: var(--space-4);">Register</a>
             </div>
             <div class="navbar-menu-desktop">
-                <!-- الروابط الحالية -->
+
                 <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle dark mode">
                     <i id="theme-icon" class="fas fa-moon"></i>
                 </button>
@@ -157,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <footer>
         <div class="container footer-content">
-            <p>&copy; 2025 My Store. All rights reserved.</p>
+            <p>&copy; 2025 GlowFit. All rights reserved.</p>
         </div>
     </footer>
 
